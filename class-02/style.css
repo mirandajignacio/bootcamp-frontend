@@ -8,10 +8,6 @@ html {
   font-size: 16px;
 }
 
-body {
-  font-size: 40px;
-}
-
 /* .container {
   display: grid;
   grid-template-columns: 1fr;
@@ -56,7 +52,7 @@ body {
   background-color: cadetblue;
 } */
 
-.position {
+/* .position {
   border: 1px solid green;
   padding: 20px;
   position: relative
@@ -70,6 +66,84 @@ body {
 
 .btn {
   position: absolute;
-  /* left: 12px; */
-  /* top: 10px */
+} */
+
+
+nav {
+  width: 100vw;
+  position: sticky;
+  top: 0;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+nav .content {
+  height: 112px;
+  max-width: 1440px;
+  margin: auto;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 48px;
+  padding: 32px 96px;
+  width: 100vw;
+
+  ul {
+    margin-left: auto; 
+    display: flex;
+    list-style-type: none;
+    gap: 48px;
+    a {
+      text-decoration: none;
+    }
+  }
+
+  button {
+    border: none;
+    padding: 13.5px 23px;
+    background-color: #426B1F;
+    height: fit-content;
+    width: fit-content;
+    border-radius: 8px;
+  }
+}
+
+.page-content {
+  max-width: 1440px;
+  margin: auto;
+}
+
+#hero {
+  margin-top: 167px;
+  text-align: center;
+  h1 {
+    padding-bottom: 48px;
+  }
+  button {
+    background-color: #426B1F;
+    padding: 19px 32px;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+  }
+}
+
+.products {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  margin: 156px 0 156px 96px;
+  .mix {
+    img {
+      margin-bottom: 16px;
+    }
+  }
+}
+
+#our-values {
+  display: grid;
+  grid-template-columns: 181px 822px;
+  grid-template-rows: auto;
+  row-gap: 32px;
+  padding: 0 96px;
 }

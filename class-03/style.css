@@ -1,0 +1,45 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+#app {
+  height: 100vh;
+  width: 100vw;
+}
+
+
+
+.card { 
+  width: 320px;
+  height: 200px;
+  /* box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2); */
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  background-color: antiquewhite;
+  margin: 4px;
+}
+
+.card__content {
+  background-color: inherit;
+}
+
+/* .card--smile {
+  z-index: 1;
+} */
+
+.card--pingpong {
+  z-index: 2;
+}
+
+.card--ice {
+  z-index: 1;
+}
+
+.card--ice .card__content {
+  z-index: 99;
+} 
