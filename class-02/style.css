@@ -6,6 +6,7 @@
 
 html {
   font-size: 16px;
+  font-family: Inter;
 }
 
 /* .container {
@@ -68,12 +69,14 @@ html {
   position: absolute;
 } */
 
-
 nav {
   width: 100vw;
   position: sticky;
   top: 0;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
 }
 
 nav .content {
@@ -87,9 +90,18 @@ nav .content {
   gap: 48px;
   padding: 32px 96px;
   width: 100vw;
-
+  span {
+    color: #426b1f;
+    font-feature-settings: "clig" off, "liga" off;
+    font-family: Newsreader;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%; /* 32px */
+    letter-spacing: -0.32px;
+  }
   ul {
-    margin-left: auto; 
+    margin-left: auto;
     display: flex;
     list-style-type: none;
     gap: 48px;
@@ -101,10 +113,12 @@ nav .content {
   button {
     border: none;
     padding: 13.5px 23px;
-    background-color: #426B1F;
+    background-color: #426b1f;
     height: fit-content;
     width: fit-content;
     border-radius: 8px;
+    color: #fff;
+    font-size: 16px;
   }
 }
 
@@ -117,10 +131,29 @@ nav .content {
   margin-top: 167px;
   text-align: center;
   h1 {
+    color: #000;
+    text-align: center;
+    font-feature-settings: "clig" off, "liga" off;
+    font-family: Newsreader;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 76.8px */
+    letter-spacing: -1.28px;
     padding-bottom: 48px;
+    span {
+      color: #000;
+      font-feature-settings: "clig" off, "liga" off;
+      font-family: Newsreader;
+      font-size: 64px;
+      font-style: italic;
+      font-weight: 400;
+      line-height: 120%;
+      letter-spacing: -1.28px;
+    }
   }
   button {
-    background-color: #426B1F;
+    background-color: #426b1f;
     padding: 19px 32px;
     border: none;
     border-radius: 8px;
@@ -146,4 +179,41 @@ nav .content {
   grid-template-rows: auto;
   row-gap: 32px;
   padding: 0 96px;
+  h2 {
+    color: #000;
+    font-feature-settings: "clig" off, "liga" off;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 160%; /* 22.4px */
+    letter-spacing: 0.56px;
+    text-transform: uppercase;
+  }
+}
+
+.basket-hero {
+  padding-bottom: 16px;
+  h1 {
+    color: #000;
+    font-feature-settings: "clig" off, "liga" off;
+    font-family: Newsreader;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 76.8px */
+    letter-spacing: -1.28px;
+  }
+}
+
+.basket-card {
+  border-radius: 24px;
+  border: 2px solid #e6e6e6;
+  background: #fafaf5;
+}
+
+.basket-order-summary {
+  border-radius: 24px;
+  border: 2px solid #e6e6e6;
+  background: #fafaf5;
 }
