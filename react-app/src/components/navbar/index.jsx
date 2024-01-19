@@ -1,11 +1,13 @@
 import { Link } from "react-router-dom";
 import { Button } from "../button";
 import { Content, LinkList, LinkListItem, NavElement, Title } from "./styles";
+import PropTypes from "prop-types";
+import { useBasketContext } from "../../hooks/use-basket-context";
 
 const links = [
   {
     name: "Shop",
-    url: "#",
+    url: "/products",
   },
   {
     name: "New Stand",
@@ -21,7 +23,9 @@ const links = [
   },
 ];
 
-const Navbar = () => {
+const Navbar = ({ onClickToggleTheme }) => {
+  const { items } = useBasketContext();
+
   return (
     <NavElement>
       <Content className="content">
@@ -32,16 +36,21 @@ const Navbar = () => {
         <LinkList>
           {links.map((link) => (
             <LinkListItem key={link.name}>
-              <a href={link.url}>{link.name}</a>
+              <Link to={link.url}>{link.name}</Link>
             </LinkListItem>
           ))}
         </LinkList>
         <Link to="/basket">
-          <Button>Basket(3)</Button>
+          <Button>Basket{items.length ? ` (${items.length})` : ""}</Button>
         </Link>
+        <Button onClick={onClickToggleTheme}>Toggle Theme</Button>
       </Content>
     </NavElement>
   );
+};
+
+Navbar.propTypes = {
+  onClickToggleTheme: PropTypes.func.isRequired,
 };
 
 export { Navbar };

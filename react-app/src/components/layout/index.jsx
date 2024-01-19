@@ -1,13 +1,18 @@
 import { Outlet } from "react-router-dom";
 import { Navbar } from "../navbar";
+import PropTypes from "prop-types";
 
-const Layout = () => {
+const Layout = ({ onClickToggleTheme }) => {
   return (
     <>
-      <Navbar />
+      <Navbar onClickToggleTheme={onClickToggleTheme} />
       <Outlet />
     </>
   );
+};
+
+Layout.propTypes = {
+  onClickToggleTheme: PropTypes.func.isRequired,
 };
 
 export { Layout };

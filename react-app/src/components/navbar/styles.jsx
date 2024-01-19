@@ -20,7 +20,6 @@ const Content = styled.div`
   align-items: center;
   gap: 48px;
   padding: 32px 96px;
-  width: 100vw;
 `;
 
 const Title = styled.span`

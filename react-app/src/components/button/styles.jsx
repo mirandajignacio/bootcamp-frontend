@@ -42,7 +42,7 @@ const getSize = (size) => {
 const ButtonElement = styled.button`
   border: none;
   padding: 13.5px 23px;
-  background-color: #426b1f;
+  background-color: ${(props) => props.theme.colors.primary};
   height: fit-content;
   width: fit-content;
   border-radius: 8px;

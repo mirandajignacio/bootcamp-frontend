@@ -1,16 +1,16 @@
 import PropTypes from "prop-types";
 import { ButtonElement } from "./styles";
 
-const Button = ({ children }) => {
+const Button = ({ children, ...rest }) => {
   return (
-    <ButtonElement variant="secondary" size="s">
+    <ButtonElement {...rest} variant="secondary" size="s">
       {children}
     </ButtonElement>
   );
 };
 
 Button.propTypes = {
-  children: PropTypes.node,
+  children: PropTypes.node.isRequired,
 };
 
 export { Button };
