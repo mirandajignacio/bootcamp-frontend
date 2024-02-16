@@ -75,7 +75,7 @@ const Home = () => {
           <br />
           organically grown food.
         </Title>
-        <Link to="/products">
+        <Link to="/produce">
           <Button>Browse our shop</Button>
         </Link>
       </Hero>

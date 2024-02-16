@@ -1,26 +1,30 @@
 import { useState, createContext } from "react";
+import PropTypes from "prop-types";
 
 const BasketContext = createContext(null);
 
-// eslint-disable-next-line react/prop-types
 const BasketContextProvider = ({ children }) => {
-  const [items, setItems] = useState([]);
+  const [produce, setProduce] = useState([]);
 
-  const addItem = (item) => {
+  const addProduct = (item) => {
     console.log("add", item);
-    setItems((items) => [...items, item]);
+    setProduce((items) => [...items, item]);
   };
 
-  const removeItem = (item) => {
+  const removeProduct = (item) => {
     console.log("remove", item);
-    setItems((items) => items.filter((i) => i.id !== item.id));
+    setProduce((items) => items.filter((i) => i.uid !== item.uid));
   };
 
   return (
-    <BasketContext.Provider value={{ items, addItem, removeItem }}>
+    <BasketContext.Provider value={{ produce, addProduct, removeProduct }}>
       {children}
     </BasketContext.Provider>
   );
+};
+
+BasketContextProvider.propTypes = {
+  children: PropTypes.node.isRequired,
 };
 
 export { BasketContextProvider, BasketContext };

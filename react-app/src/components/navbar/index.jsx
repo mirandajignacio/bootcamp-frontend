@@ -7,7 +7,7 @@ import { useBasketContext } from "../../hooks/use-basket-context";
 const links = [
   {
     name: "Shop",
-    url: "/products",
+    url: "/produce",
   },
   {
     name: "New Stand",
@@ -23,31 +23,37 @@ const links = [
   },
 ];
 
-const Navbar = ({ onClickToggleTheme }) => {
-  const { items } = useBasketContext();
+const Navbar = () =>
+  // {
+  // onClickToggleTheme
+  // }
+  {
+    const { produce } = useBasketContext();
 
-  return (
-    <NavElement>
-      <Content className="content">
-        <Link to="/">
-          <Title> World Peas</Title>
-        </Link>
+    return (
+      <NavElement>
+        <Content className="content">
+          <Link to="/">
+            <Title> World Peas</Title>
+          </Link>
 
-        <LinkList>
-          {links.map((link) => (
-            <LinkListItem key={link.name}>
-              <Link to={link.url}>{link.name}</Link>
-            </LinkListItem>
-          ))}
-        </LinkList>
-        <Link to="/basket">
-          <Button>Basket{items.length ? ` (${items.length})` : ""}</Button>
-        </Link>
-        <Button onClick={onClickToggleTheme}>Toggle Theme</Button>
-      </Content>
-    </NavElement>
-  );
-};
+          <LinkList>
+            {links.map((link) => (
+              <LinkListItem key={link.name}>
+                <Link to={link.url}>{link.name}</Link>
+              </LinkListItem>
+            ))}
+          </LinkList>
+          <Link to="/basket">
+            <Button>
+              Basket{produce.length ? ` (${produce.length})` : ""}
+            </Button>
+          </Link>
+          {/* <Button onClick={onClickToggleTheme}>Toggle Theme</Button> */}
+        </Content>
+      </NavElement>
+    );
+  };
 
 Navbar.propTypes = {
   onClickToggleTheme: PropTypes.func.isRequired,
