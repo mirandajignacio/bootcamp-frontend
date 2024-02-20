@@ -3,7 +3,9 @@ import PropTypes from "prop-types";
 
 const Container = styled.div`
   background: #fafaf5;
-  border: 2px solid #e6e6e6;
+  border: 2px solid
+    ${(props) =>
+      props.inbasket === "true" ? props.theme.colors.primary : "#e6e6e6"};
   height: 444px;
   border-radius: 24px;
   cursor: pointer;
@@ -56,9 +58,8 @@ const ProduceCard = ({
   imageUrl,
   name,
 }) => {
-  console.log(inBasket);
   return (
-    <Container onClick={onClick}>
+    <Container onClick={onClick} inbasket={String(inBasket)}>
       <Image src={imageUrl} />
       <Description>
         <Name>{name}</Name>

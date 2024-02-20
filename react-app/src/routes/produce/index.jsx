@@ -96,7 +96,7 @@ const produceList = [
 ];
 
 const Produce = () => {
-  const { addProduct } = useBasketContext();
+  const { addProduct, isInBasket } = useBasketContext();
   const [view, setView] = useState("grid");
   const viewButtonLabel = view === "grid" ? "List view" : "Grid view";
   const toggleView = () => setView(view === "grid" ? "list" : "grid");
@@ -114,16 +114,19 @@ const Produce = () => {
         </ButtonsWrapper>
       </Hero>
       <ProduceGrid>
-        {produceList.map((produce) => (
-          <ProduceCard
-            key={produce.uid}
-            {...produce}
-            inBasket={false}
-            onClick={() => {
-              addProduct(produce.uid);
-            }}
-          />
-        ))}
+        {produceList.map((produce) => {
+          const inBasket = isInBasket(produce);
+          return (
+            <ProduceCard
+              key={produce.uid}
+              {...produce}
+              inBasket={inBasket}
+              onClick={() => {
+                addProduct(produce);
+              }}
+            />
+          );
+        })}
       </ProduceGrid>
     </PageContainer>
   );

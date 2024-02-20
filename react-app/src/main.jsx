@@ -7,6 +7,8 @@ import { Root } from "./routes/root";
 import { Home } from "./routes/home";
 import { Produce } from "./routes/produce";
 import { Basket } from "./routes/basket";
+import { ContextExample } from "./routes/context-example";
+import { HooksExample } from "./routes/hooks-example";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +26,14 @@ const router = createBrowserRouter([
       {
         path: "/basket",
         element: <Basket />,
+      },
+      {
+        path: "/context-example",
+        element: <ContextExample />,
+      },
+      {
+        path: "/hooks-example",
+        element: <HooksExample />,
       },
     ],
   },

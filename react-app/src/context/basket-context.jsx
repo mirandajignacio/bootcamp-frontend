@@ -6,18 +6,26 @@ const BasketContext = createContext(null);
 const BasketContextProvider = ({ children }) => {
   const [produce, setProduce] = useState([]);
 
+  const isInBasket = (item) => {
+    return !!produce.find((i) => i.uid === item.uid);
+  };
+
   const addProduct = (item) => {
-    console.log("add", item);
+    if (isInBasket(item)) {
+      removeProduct(item);
+      return;
+    }
     setProduce((items) => [...items, item]);
   };
 
   const removeProduct = (item) => {
-    console.log("remove", item);
     setProduce((items) => items.filter((i) => i.uid !== item.uid));
   };
 
   return (
-    <BasketContext.Provider value={{ produce, addProduct, removeProduct }}>
+    <BasketContext.Provider
+      value={{ produce, addProduct, removeProduct, isInBasket }}
+    >
       {children}
     </BasketContext.Provider>
   );
