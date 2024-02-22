@@ -52,6 +52,7 @@ const ProfileForm = () => {
       alert(JSON.stringify(values, null, 2));
     },
   });
+  console.log("render");
   return (
     <>
       <Form onSubmit={formik.handleSubmit}>
