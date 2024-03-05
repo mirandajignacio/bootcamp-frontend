@@ -15,8 +15,6 @@ const theme = {
 };
 
 export default function App({ Component, pageProps }) {
-  console.log("App", new Date());
-
   return (
     <>
       <GlobalStyle />

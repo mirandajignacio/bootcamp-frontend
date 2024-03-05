@@ -6,11 +6,13 @@ import styled from "styled-components";
 import { useHello } from "@/hooks/use-hello";
 import { useEffect } from "react";
 import Link from "next/link";
-const inter = Inter({ subsets: ["latin"] });
 
 const Container = styled.div`
-  border: 1px solid black;
   color: ${({ theme }) => theme.colors.primary};
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
 `;
 
 const Home = (props) => {
@@ -29,8 +31,10 @@ const Home = (props) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Link href="/blog">Blog</Link>
-      <Container>Create Next App</Container>
+      <Container>
+        <Link href="/app">App</Link>
+        <Link href="/blog">Blog</Link>
+      </Container>
     </>
   );
 };
