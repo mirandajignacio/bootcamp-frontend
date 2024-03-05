@@ -9,6 +9,7 @@ import { Produce } from "./routes/produce";
 import { Basket } from "./routes/basket";
 import { ContextExample } from "./routes/context-example";
 import { HooksExample } from "./routes/hooks-example";
+import { PrivateRoutes } from "./routes/utils/private-routes";
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,20 @@ const router = createBrowserRouter([
       {
         path: "/hooks-example",
         element: <HooksExample />,
+      },
+      {
+        path: "/login",
+        element: <div>login</div>,
+      },
+      {
+        path: "/app",
+        element: <PrivateRoutes />,
+        children: [
+          {
+            path: "/app/settings",
+            element: <div>settings</div>,
+          },
+        ],
       },
     ],
   },

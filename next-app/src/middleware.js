@@ -3,6 +3,14 @@
 export async function middleware(request) {
   const currentUser = request.cookies.get("user")?.value;
 
+  const validatedUser = await new Promise((resolve) =>
+    setTimeout(resolve, 3000)
+  );
+
+  console.log(validatedUser);
+
+  console.log("validatedUser", validatedUser);
+
   if (!currentUser && request.nextUrl.pathname.startsWith("/app")) {
     return Response.redirect(new URL("/sign", request.url));
   }
@@ -10,7 +18,8 @@ export async function middleware(request) {
   if (
     !currentUser &&
     !request.nextUrl.pathname.startsWith("/sign") &&
-    request.nextUrl.pathname !== "/"
+    request.nextUrl.pathname !== "/" &&
+    request.nextUrl.pathname !== "/blog"
   ) {
     return Response.redirect(new URL("/sign", request.url));
   }

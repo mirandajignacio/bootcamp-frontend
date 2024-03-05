@@ -41,7 +41,11 @@ function Root() {
 
   return (
     <ThemeProvider theme={getTheme(theme)}>
-      <BasketContextProvider>
+      <BasketContextProvider
+        defaultValue={{
+          name: "chona",
+        }}
+      >
         <Layout onClickToggleTheme={toggleTheme} />
       </BasketContextProvider>
     </ThemeProvider>
