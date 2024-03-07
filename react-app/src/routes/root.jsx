@@ -30,7 +30,7 @@ const themeLight = {
 
 const getTheme = (theme) => (theme === "light" ? themeDark : themeLight);
 
-function Root() {
+const MyThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState("light");
 
   const toggleTheme = () => {
@@ -41,14 +41,23 @@ function Root() {
 
   return (
     <ThemeProvider theme={getTheme(theme)}>
+      {children}
+      <button onClick={toggleTheme}>Toggle Theme</button>
+    </ThemeProvider>
+  );
+};
+
+function Root() {
+  return (
+    <MyThemeProvider>
       <BasketContextProvider
         defaultValue={{
           name: "chona",
         }}
       >
-        <Layout onClickToggleTheme={toggleTheme} />
+        <Layout />
       </BasketContextProvider>
-    </ThemeProvider>
+    </MyThemeProvider>
   );
 }
 
