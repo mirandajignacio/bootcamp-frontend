@@ -9,4 +9,11 @@ export default defineConfig({
       src: "/src",
     },
   },
+  test: {
+    testFiles: "src/**/*.test.{ts,tsx}",
+    globals: true,
+    environment: "jsdom",
+    css: "true",
+    setupFiles: "./src/test/setup.js",
+  },
 });

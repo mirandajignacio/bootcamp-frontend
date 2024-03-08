@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Layout } from "../components/layout";
 import { ThemeProvider } from "styled-components";
 import { BasketContextProvider } from "../context/basket-context";
-const themeDark = {
+export const darkTheme = {
   colors: {
     primary: "#426b1f",
     secondary: "blue",
@@ -15,7 +15,7 @@ const themeDark = {
   },
 };
 
-const themeLight = {
+export const lightTheme = {
   colors: {
     primary: "red",
     secondary: "blue",
@@ -28,9 +28,9 @@ const themeLight = {
   },
 };
 
-const getTheme = (theme) => (theme === "light" ? themeDark : themeLight);
+const getTheme = (theme) => (theme === "light" ? darkTheme : lightTheme);
 
-const MyThemeProvider = ({ children }) => {
+export const MyThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState("light");
 
   const toggleTheme = () => {

@@ -4,7 +4,7 @@ import { ButtonElement } from "./styles";
 const Button = ({ children, ...rest }) => {
   return (
     <ButtonElement {...rest} variant="secondary" size="s">
-      {children}
+      {children} + 1
     </ButtonElement>
   );
 };
