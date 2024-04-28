@@ -8,6 +8,11 @@ export const darkTheme = {
     secondary: "blue",
     danger: "red",
   },
+  breakPoints: {
+    mobile: "320px",
+    tablet: "768px",
+    desktop: "1024px",
+  },
   fontSize: {
     s: "12px",
     m: "16px",
@@ -20,6 +25,11 @@ export const lightTheme = {
     primary: "red",
     secondary: "blue",
     danger: "red",
+  },
+  breakPoints: {
+    mobile: "320px",
+    tablet: "768px",
+    desktop: "1024px",
   },
   fontSize: {
     s: "12px",

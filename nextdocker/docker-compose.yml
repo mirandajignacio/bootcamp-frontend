@@ -1,0 +1,9 @@
+version: '3.9'
+
+services:
+  nextapp:
+    container_name: next-app-docker
+    image: mirandajignacio/next-app-docker
+    build: .
+    ports:
+      - "3000:3000"

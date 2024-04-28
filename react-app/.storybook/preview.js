@@ -4,19 +4,17 @@ import { withThemeFromJSXProvider } from "@storybook/addon-themes";
 import { lightTheme, darkTheme } from "../src/routes/root";
 
 const GlobalStyle = createGlobalStyle`
-    * {
+  * {
     box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
+    padding: 0;
+    margin: 0;
+  }
 
-html {
-  font-size: 16px;
-  font-family: Inter;
-}
-
+  html {
+    font-size: 16px;
+    font-family: Inter;
+  }
 `;
-/* snipped for brevity */
 
 export const decorators = [
   withThemeFromJSXProvider({
